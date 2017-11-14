@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOT-NEWS</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui.css">
+	<script language="javascript" src="js/jquery-3.2.1.js"></script>
+	<script language="javascript" src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script language="javascript" src="js/handlebars-v4.0.11.js"></script>
+	<script language="javascript" src="js/time.js"></script>
+	<script language="javascript" src="js/sorting.js"></script>
+	<script language="javascript" src="js/leftmenu.js"></script>
+	<script language="javascript" src="js/support.js"></script>
+	<script language="javascript" src="js/addnews.js"></script>
+</head>
+<body>
+
+	<header>
+		<h1><a href="index.html">HOT-NEWS</a></h1>
+		<div>
+			<time class="currentdate"></time>			
+		</div>
+		<form>
+			<input type="button" name="all news" value="All news">
+			<input type="button" name="politics" value="Politics">
+			<input type="button" name="culture" value="Culture">
+			<input type="button" name="hi-tech" value="Hi-tech">
+			<input type="button" name="other" value="Other">
+		</form>
+	</header>
+
+
+	<aside>
+		<button id="leftmenu"><strong>&raquo</strong></button>
+
+		<div class="lastnews">
+			<input type="search" name="search" placeholder="Search...">
+			<h1>Last News</h1>
+			<ul class="titles">
+
+				<script id="TemplateLast" type="text/x-handlebars-template">
+					<li name="{{number}}">
+						<a href="#" class="title">{{title}}</a>
+					</li>
+				</script>
+
+			</ul>
+		</div>
+	</aside>
+
+	<section class="news">
+
+		<script id="TemplateDescription" type="text/x-handlebars-template">
+				{{#each news}}
+				<li>
+					<h3><a href="#">{{title}}</a></h3>
+					<div class="description">{{description}}</div>
+					<p class="author">{{author}} <time>{{date}}</time></p>
+				</li>
+				{{/each}}
+			</script>
+
+		<script language="javascript" src="js/templatenews.js"></script>
+
+		<div class="politics">
+			<h2>Politics News</h2>
+			<ul>
+			</ul>
+		</div>
+
+		<div class="culture">
+			<h2>Culture News</h2>
+			<ul>
+			</ul>
+		</div>
+
+		<div class="hi-tech">
+			<h2>Hi-tech News</h2>
+			<ul>
+			</ul>
+		</div>
+
+		<div class="other">
+			<h2>Other News</h2>
+			<ul>
+			</ul>
+		</div>
+	</section>
+
+	<section class="addnews">
+		<form>
+			<fieldset>
+				<legend>To publish a new news</legend>
+				<p><strong>Theme:</strong></p>
+				<select name="theme">
+					<option value="politics">Politics</option>
+					<option value="culture">Culture</option>
+					<option value="hi-tech">Hi-tech</option>
+					<option value="other">Other</option>
+				</select>
+				<input type="text" name="author" placeholder="Enter your name *" required>
+				<br>
+				<p><strong>Title:</strong></p>
+				<input type="text" name="title" placeholder="Enter title *" required>
+				<textarea placeholder="Share your news *" required></textarea>
+				<p>* - required to be a fill</p>
+				<input type="button" name="publish" value="Publish">
+				<textarea id="postingdate"></textarea>
+			</fieldset>
+		</form>
+	</section>
+
+	<footer>
+		<a href="1" ><img name="android" src="img/platforms.png" alt="android"></a>
+		<a href="2" ><img name="apple" src="img/platforms.png" alt="apple"></a>
+		<a href="3" ><img name="windows" src="img/platforms.png" alt="windows"></a>
+		<div>
+			<div id="successmessage">
+			</div>
+			
+			<p>Technical support</p>
+			
+			<div id="support">
+				<form>
+					<ul>
+						<li>
+							<input id = first type="text" placeholder="Enter your name:">
+						</li>
+						<li>
+							<input type="text" placeholder="Enter a subject for the treatment:">
+						</li>
+						<li>
+							<input type="email" placeholder="Enter your e-mail:">
+						</li>
+						<li>
+							<textarea placeholder="Complaints and suggestions"></textarea>
+						</li>
+						<li>
+							<input type="button" value="Submit">
+						</li>
+					</ul>
+					<h1>X</h1>
+				</form>
+			</div>
+		</div>
+		<p>&copy Hot-News 2017</p>
+	</footer>
+	
+	<script language="javascript" src="js/main.js"></script>
+</body>
+</html>
