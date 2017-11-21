@@ -6,7 +6,7 @@ var template = Handlebars.compile(source);
 
 function post(were, from) {
 
-	$.getJSON('https://github.com/GaneevAlex/GaneevAlex.github.io/tree/master/Website/json/'+from+'.json', function(data){
+	$.getJSON('../data/'+from+'.json', function(data){
 
 		$(were).append(template(data));
 		for (var i = 0; i < data.news.length; i++) {
