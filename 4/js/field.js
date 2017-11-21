@@ -10,7 +10,7 @@ function createField(columns, rows) {
 		var tr = document.createElement('tr');
 			for (var j = 1; j <= columns; j++) {
 				var td = document.createElement('td');
-				$(td).css({'background-color' : "rgb(255, 255, 255)"});
+				$(td).css({'background-color' : "rgba(255, 255, 255)"});
 				$(tr).append(td);
 			}
 		$(field).append(tr);

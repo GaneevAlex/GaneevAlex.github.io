@@ -8,13 +8,15 @@ function setCell(x, y, color) {
 	
 	var row = field.rows[y].cells[x];
 	//if snake
+
 	if (color == "rgb(139, 0, 0)") {
 		
 		if (row.style.backgroundColor == "rgb(34, 139, 34)") {
 			elem(1, 'rgb(34, 139, 34)'); //add new eat
 			elem(1, 'rgb(139, 137, 112)'); //add new wall
 			score++;
-			row.style.backgroundColor = color;
+			$(row).css({'background-color' : color});
+			//row.style.backgroundColor = color;
 		}
 
 		else if (row.style.backgroundColor == "rgb(139, 137, 112)" || row.style.backgroundColor == "rgb(139, 0, 0)") {
@@ -30,18 +32,18 @@ function setCell(x, y, color) {
 		}
 
 		else {
-			row.style.backgroundColor = color;
+			$(row).css({'background-color' : color});
 			deleteSnake();
 		}
 
 	}
-
+	//if delete
 	else if (color == "rgb(255, 255, 255)") {
 
-		row.style.backgroundColor = color;
+		$(row).css({'background-color' : color});
 
 	}
-	
+	//if wall or eat
 	else {
 		if (row.style.backgroundColor != "rgb(255, 255, 255)") {
 			setCell(getRandomInt(1, cell-2), getRandomInt(1, cell-2), color);

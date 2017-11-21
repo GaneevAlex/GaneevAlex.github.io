@@ -22,13 +22,11 @@ td {
 
 #mainmenu, #menusettings {
 	margin: auto;
-	border: 3px solid black;
 	width: 150px;
 	padding: 20px;
-	background-color: brown;
 	position: relative;
+	top: 150px;
 	color: white;
-
 }
 
 input{
@@ -40,7 +38,13 @@ input{
 }
 
 #mainmenu input:hover {
-	color: blue;
+	transition: color 2s;
+	color: yellow;
+}
+
+#save:hover {
+	transition: color 2s;
+	color: yellow;
 }
 
 #mainmenu h2, h4 {
@@ -49,6 +53,7 @@ input{
 }
 
 #mainmenu h2:hover {
+	transition: color 2s;
 	color: yellow;
 }
 
@@ -60,6 +65,29 @@ input{
 	font-size: 25px;
 }
 
+h1 {
+	color: white;
+	position: relative;
+	top: 150px;
+	animation: color 5s infinite linear;
+}
+
+@keyframes color {
+	20% {
+		color: red;	
+	}
+
+	50% {
+		color: white;
+	}
+
+	70% {
+		color: red;
+	}
+} 
+
 body {
-	background-color: rgba(14, 59, 16, 0.5);
+	background-image: url("../img/Snake.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
 }

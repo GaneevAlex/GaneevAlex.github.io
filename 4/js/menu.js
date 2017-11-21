@@ -11,10 +11,11 @@ function mainMenu() {
 	settings();
 
 	$('#start').click(function(){
-		
+		//animation button
+		$('#start').effect("pulsate",{times:3}, 300, function(){
 		//Animation main menu		
-		$('#mainmenu').fadeOut(500, startgame);
-
+		$('#mainmenu').fadeOut(500, startgame);	
+		});	
 	});
 	//Animation main menu and settings
 	$('#setting').click(function() {
