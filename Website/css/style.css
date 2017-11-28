@@ -71,6 +71,7 @@ header input {
 	-webkit-box-shadow:10px 10px 20px #000000;
 	transform:rotate(-5deg);
 	box-shadow:10px 10px 20px #000000;
+	transition: 0.5s;
 }
 
 header input:hover {
@@ -174,7 +175,7 @@ aside li a:hover {
 }
 
 .news > div {
-	background-color: rgb(50, 50, 50);
+	background-color: rgb(80, 80, 80);
 	-moz-box-shadow:-10px 10px 20px #000000;
 	-webkit-box-shadow:-10px 10px 20px #000000;
 	box-shadow:-10px 10px 20px #000000;
