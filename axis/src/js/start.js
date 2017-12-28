@@ -39,6 +39,6 @@ var ValuesSumm = function(a1, a2, e1, e2) {
 /*Начать сначала*/
 var Again = function(a1, a2, e1, e2) {
 
-	$('section').html('<h2 id="equation"><div class="firstSumm"></div><p> + </p><div class="secondSumm"></div><p>=</p><div class="equal"><form id="eInput"><input type="text" class = "equalInput"></form></div></h2><form id="inputs"><input type="text" class="active"></form><canvas id="arrow"></canvas><div class="sprite"><img src="axis/src/img/sprite.png">	</div>');
+	$('section').html('<h2 id="equation"><div class="firstSumm"></div><p> + </p><div class="secondSumm"></div><p>=</p><div class="equal"><form id="eInput"><input type="text" class = "equalInput"></form></div></h2><form id="inputs"><input type="text" class="active"></form><canvas id="arrow"></canvas><div class="sprite"><img src="img/sprite.png">	</div>');
 		new ValuesSumm(a1, a2, e1, e2);
 }
