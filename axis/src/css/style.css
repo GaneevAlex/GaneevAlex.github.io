@@ -1,0 +1,121 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  background-color: #ab753f;
+  padding-top: 3%;
+}
+header {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 20;
+  font-family: sans-serif;
+}
+section {
+  -webkit-box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.84);
+          box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.84);
+  background-color: #ffa44a;
+  border-radius: 30px;
+  position: relative;
+  margin: auto;
+  width: 800px;
+  height: 300px;
+}
+section h2 {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 50;
+}
+section h2 p {
+  display: inline-block;
+}
+section h2 div {
+  display: inline-block;
+  font-family: sans-serif;
+}
+section h2 div form {
+  position: absolute;
+  top: 30%;
+}
+#inputs {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 131mm;
+  height: 53mm;
+  z-index: 30;
+}
+.sprite {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-60%);
+          transform: translateX(-60%);
+}
+.sprite img {
+  width: 120%;
+  height: 12mm;
+  z-index: 1;
+}
+.arrow,
+.newCanvas {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 131mm;
+  height: 53mm;
+  z-index: 10;
+}
+.active {
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  border-radius: 5px;
+}
+.firstSummPlace,
+.secondSummPlace {
+  position: absolute;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+}
+.equalInput {
+  display: none;
+  width: 20px;
+  border-radius: 5px;
+}
+button {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 100;
+  width: 150px;
+  font-weight: 700;
+  background-color: #32CD32;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 2px 14px 0px rgba(34, 152, 48, 0.84);
+          box-shadow: 4px 2px 14px 0px rgba(34, 152, 48, 0.84);
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+button:hover {
+  background-color: #28a428;
+  color: #fff;
+}
+.newCanvas {
+  display: none;
+}
