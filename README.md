@@ -7,5 +7,5 @@
 [Snake_v0.7](https://ganeevalex.github.io/3_JQuery/snake.html) - JS with JQuery;  
 [Snake_v0.9](https://ganeevalex.github.io/4/snake.html) - Plus JQuery UI, and other changes;  
 [Game 2048](https://ganeevalex.github.io/2048%20test%20task/2048.html) - for the movement of the cubes use the mouse;  
-[Axes-2](https://ganeevalex.github.io/axis/src/) - single digit addition;
- 
+[Axes-2](https://ganeevalex.github.io/axis/src/) - single digit addition;  
+[BookManager](https://ganeevalex.github.io/BookManager/) - Start learning php and MySQL. Еhe link to the hosting :http://ganeevalex.000webhostapp.com/;
