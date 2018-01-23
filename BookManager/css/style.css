@@ -1,0 +1,78 @@
+body {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+}
+
+header, footer {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 50px;
+	width: 100%;
+	background-color: #3b723b;
+	padding-top: 20px;
+
+}
+
+section {
+	padding: 90px;
+}
+
+form {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	color: #e5a32b;
+	padding: 0 30px;
+}
+
+a:hover {
+	color:#ba8016;
+}
+
+input {
+	background-color: white;
+	outline: none;
+	border: 1px solid black;
+}
+
+footer {
+	bottom: 0;
+}
+
+#seeBook_section {
+	display: none;
+}
+
+#deleteBook_section {
+	display: none;
+}
+
+#updateBook_section {
+	display: none;
+}
+
+#message {
+	position: absolute;
+	top: 75%;
+	left: 40%;
+	transform: translateX(-50%);
+}
+
+.idBooks {
+	display: none;
+}
+
+.check {
+	display: none;
+}
+
+.btn:hover {
+	background-color: #a6a6a6;
+}
+.btn:active {
+	background-color: #692a2a;
+}
