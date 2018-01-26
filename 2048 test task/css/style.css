@@ -201,3 +201,6 @@
   left: 68px;
   border-radius: 0px 0 20px 20px;
 }
+.new {
+  display: none;
+}
