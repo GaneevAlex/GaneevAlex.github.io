@@ -23,8 +23,12 @@
     </script>
 </head>
 <body>
-<div id="gameover"><h1>Game Over</h1></div>
+<div id="gameover">
+    <h1>Game Over</h1>
+    <input type="button" id="restart" value="Restart">
+</div>
 <div id="score">Score: 0</div>
+<div id="record">Record: 0</div>
 <div id="playfield">
     <div class="back" style="top: 0px; left: 0px;"></div>
     <div class="back" style="top: 100px; left: 0px;"></div>
@@ -48,6 +52,14 @@
     <div class="way way-down"></div>
     <div class="way way-left"></div>
     <div class="way way-right"></div>
+</div>
+<div id="menu">
+    <input type="button" id="start" value="Start">
+    <div class="manual">
+        <span>Для игры кликайте на поле и ведите мышь в необходимую сторону</span>
+        <br>
+        <span>For the game, click on the field and drag the mouse in the required direction</span>
+    </div>    
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
 <script type="text/javascript" src="js/field.js"></script>

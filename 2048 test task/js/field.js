@@ -1,18 +1,36 @@
 "use strict";
 //Конструктор поля
 function Field() {
-	/*Было ли действие*/
-	this.checkCreate = 0; 
-	/*подсчет очков*/
-	this.score = 0; 
+	
+	this.reset();
+	
+}
+//Начальные параметры
+Field.prototype.reset = function() {
 	/*Значения в поле*/
-	this.fillField = [
-		[0,0,0,0],
-		[0,0,0,0],
-		[0,0,0,0],
-		[0,0,0,0]
-	];
+	this.fillField = [];
+	for (let i = 0; i < 4; i++) {
+		this.fillField[i] = [];
+		for (let j = 0; j < 4; j++) {
+			this.fillField[i][j] = 0;
+		}
+	}
+//Удаление ячеек
+	if ($('.thing')) {
+		let $thing = $('.thing');
+		$thing.each(function(e){
+			$thing.eq(e).remove();
+		});
+	}
+	//Длина поля
 	this.lengthField = this.fillField.length;
+	//Текущий рекорд
+	this.record = this.recordView();
+	//Подсчет очков
+	this.scoreCount(0);
+	//Нужно ли создавать новую ячейку
+	this.checkCreate = 0;
+	//Массив существующих ячеек
 	this.arrayElements = [];
 	this.createCell();
 	this.createCell();
@@ -259,8 +277,22 @@ Field.prototype.checkNewCell = function() {
  }
 /*Подсчет очков*/
 Field.prototype.scoreCount = function(value){
+	if (value == 0) {
+		this.score = value;
+	}
 	this.score += value;
-	$("#score").html('Score: '+this.score);
+	$("#score").html('Score: ' + this.score);
+}
+/*Вывод рекорда*/
+Field.prototype.recordView = function(){
+ 	this.record = localStorage.getItem('record') || 0;
+	$("#record").html('Record: ' + this.record);
+	return this.record;
+}
+Field.prototype.setRecord = function(){
+	if (this.record < this.score) {
+		this.record = localStorage.setItem('record', this.score);
+	}
 }
 /*Проверка на возможность ходов*/
 Field.prototype.gameOver = function() {
@@ -293,6 +325,7 @@ Field.prototype.gameOver = function() {
 		}
 	}
 
-	$('#gameover h1').show(600);
+	$('#gameover').show(600);
+	this.setRecord();
 	return false;
 }
