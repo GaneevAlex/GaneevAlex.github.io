@@ -1,7 +1,9 @@
+"use strict";
 //Конструктор для управления с помощью мыши
   function Start() {
 
  	this.field = new Field();
+
  	const self = this;
  	const $playField = $('#playfield');
  	const $everyWhere = $('#playfield, html');
@@ -10,7 +12,7 @@
  	let xDown = 0, xUp = 0, yDown = 0, yUp = 0; //координаты мыши во время нажатия
   	this.sens = 40; //чувствительность сдвига
 
- 	/*Координаты курсора при нажатии/отжатии кнопки*/
+ //Координаты курсора при нажатии/отжатии кнопки
  	$playField.on( "mousedown", function(e) {
  	  xDown = e.pageX;
  	  yDown = e.pageY;
@@ -80,5 +82,5 @@
  }
 
  $(document).ready(function () {
- 	const mouse = new Start();
+ 	const start = new Start();
  });
