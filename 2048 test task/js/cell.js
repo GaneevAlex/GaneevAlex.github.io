@@ -45,17 +45,3 @@ Cell.prototype.createElement = function() {
 	$newElement.removeClass('new');
 	return this.element;
 }
-
-/* можно так писать
-Cell.prototype = {
-	updateCell: function(value) {
-	...
-	},
-	drowCell: function(newRow, newCol) {
-	...
-	},
-	createElement: function() {
-	...
-	}
-}
-*/
