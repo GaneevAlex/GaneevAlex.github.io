@@ -59,16 +59,17 @@ html {
 #restart:active {
   background-color: #1c361c;
 }
-#gameover {
-  display: none;
-}
 #restart {
   position: absolute;
   left: 270px;
   top: 180px;
   z-index: 20;
 }
-#gameover h1 {
+#restart {
+  display: none;
+}
+#gameover {
+  display: none;
   position: absolute;
   top: 80px;
   left: 100px;
