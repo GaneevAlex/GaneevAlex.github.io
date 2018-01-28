@@ -121,7 +121,7 @@ class FieldModel {
     }
 
     if (this.fillField[row][col] == this.fillField[tmpRow][tmpCol]) {
-      this.fillField[row][col] = this.fillField[row][col]*2;
+      this.fillField[row][col] *= 2;
       this.fillField[tmpRow][tmpCol] = 0;
       this.checkCreate = 1;
       this.field.summView(row, col, tmpRow, tmpCol)
@@ -155,14 +155,14 @@ class FieldModel {
           while ((tmp < fieldLength) && (tmp >= 0)) {
             tmp += inc;
             if (horisont) {
-              if ((this.moveToEmpty(row, col, row, tmp))) {
-              break;
-              };
+                if ((this.moveToEmpty(row, col, row, tmp))) {
+                  break;
+                };
             } else {
-              if (this.moveToEmpty(col, row, tmp, row)) {
-              break;
-              };
-            }
+                if (this.moveToEmpty(col, row, tmp, row)) {
+                  break;
+                };
+              }
           }
         }
       }
@@ -193,7 +193,7 @@ class FieldModel {
 
     } else {
         return true;
-    }
+      }
   }
   //Проверка есть ли свободные клетки
   checkFill(){ 
@@ -236,7 +236,7 @@ class FieldModel {
 
             } else if (this.fillField[row][col] == this.fillField[row+1][col]) {
                 return true;
-            }
+              }
 
           } else {
               if (this.fillField[row][col] == this.fillField[row+1][col]) {
