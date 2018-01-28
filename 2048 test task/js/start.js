@@ -21,35 +21,30 @@ class Start {
   }
   //Начало игры
   startGameListener() {
-    const self = this;
-
-    $('#start').on('click', function(){
-
-      self.field = new Field(self.$playField);
+    $('#start').on('click', () => {
+      this.field = new Field(this.$playField);
 
       const $menu = $('#menu');
       $menu.fadeOut(600);
 
       setTimeout(function() {
-      $menu.remove()}, 800);
+        $menu.remove()
+      }, 800);
     });
   }
   //Координаты курсора при нажатии/отжатии кнопки
   cursorCoordinates() {
-    const self = this;
-
-    this.$playField.on( "mousedown", function(e) {
-      self.xDown = e.pageX;
-      self.yDown = e.pageY;
-      self.mouseDown = true;
-      self.joy(self.xDown, self.yDown);
+    this.$playField.on( "mousedown", e => {
+      this.xDown = e.pageX;
+      this.yDown = e.pageY;
+      this.mouseDown = true;
+      this.joy(this.xDown, this.yDown);
     });
 
-    this.$everyWhere.on( "mouseup", function(e) { 
-
-      if (self.mouseDown) {
-        self.moveDirection(e.pageX, e.pageY);
-        self.mouseDown = false;
+    this.$everyWhere.on( "mouseup", e => { 
+      if (this.mouseDown) {
+        this.moveDirection(e.pageX, e.pageY);
+        this.mouseDown = false;
       }
     });
   }
@@ -73,20 +68,20 @@ class Start {
       } else {
           this.field.move('down');
         }
-    }
+    } else {
+        this.field.move();
+      }
   }
   //Отображение джойстика
   joy(x, y) {
-    const self = this;
-
     this.$gamepad.css({
       display: 'block',
       top: y-80,
       left: x-80
     });
 
-    this.$everyWhere.on('mouseup', function(){
-      self.$gamepad.css({
+    this.$everyWhere.on('mouseup', () => {
+      this.$gamepad.css({
         display: 'none',
       });
     });
@@ -98,10 +93,8 @@ class Start {
   }
   //Начать заного
   restartGameListener() {
-    const self = this;
-
-    $('#restart').on('click', function(){
-      self.field.resetView();
+    $('#restart').on('click', () => {
+      this.field.resetView();
     })
   }
 }
