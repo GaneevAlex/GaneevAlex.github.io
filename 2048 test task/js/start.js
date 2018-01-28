@@ -25,7 +25,7 @@ class Start {
 
     $('#start').on('click', function(){
 
-      self.field = new Field(self.$playField, self.$gameOver);
+      self.field = new Field(self.$playField);
 
       const $menu = $('#menu');
       $menu.fadeOut(600);
@@ -74,8 +74,6 @@ class Start {
           this.field.move('down');
         }
     }
-
-    this.field.checkNewCell();
   }
   //Отображение джойстика
   joy(x, y) {
@@ -93,7 +91,7 @@ class Start {
       });
     });
   }
-  //Последний рекорд
+  //Отображение последнего рекорда
   lastRecord() {
     const lastRecord = localStorage.getItem('record') || 0;
     $("#record").html('Record: ' + lastRecord);
@@ -103,7 +101,7 @@ class Start {
     const self = this;
 
     $('#restart').on('click', function(){
-      self.field.reset();
+      self.field.resetView();
     })
   }
 }

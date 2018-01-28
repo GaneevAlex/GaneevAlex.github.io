@@ -11,7 +11,7 @@
          В каждом раунде появляется плитка номинала «2» (с вероятностью 90 %) или «4» (с вероятностью 10 %).
          В начале игры на поле находится 1 клетка.
          Чтобы сделать ход, игрок должен зажать левую кнопку мыши и переместить курсор в одном из четырех направлений.
-         Все клетку с числами при этом сдивгаются в этом направлении до упора.
+         Все клетку с числами при этом сдвигаются в этом направлении до упора.
          Если при этом две плитки одного номинала «налетают» одна на другую, то они слипаются в одну,
          номинал которой равен сумме соединившихся плиток.
          После каждого хода на свободной секции поля появляется новая плитка номиналом «2» или «4».
@@ -55,7 +55,7 @@
 </div>
 <div id="menu">
     <input type="button" id="start" value="Start">
-    <div class = "thing t2048" style = "top:40px; left:150px;"></div>
+    <div class = "menuThing t2048" style = "top:40px; left:150px;"></div>
     <div class="manual">
         <span>Для игры кликайте на поле и ведите мышь в необходимую сторону</span>
         <br>
@@ -64,6 +64,7 @@
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
 <script type="text/javascript" src="js/field.js"></script>
+<script type="text/javascript" src="js/fieldmodel.js"></script>
 <script type="text/javascript" src="js/cell.js"></script>
 <script type="text/javascript" src="js/start.js"></script>
 </body>
