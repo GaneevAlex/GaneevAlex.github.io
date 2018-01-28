@@ -14,7 +14,8 @@ class Cell {
 	}
 	//Создание новой ячейки
 	createElement() {
-	 		let appendElement = `<div class = "new thing t${this.value}" style = "top: ${this.currentTop}px; left: ${this.currentLeft}px;"></div>`;
+	 		let appendElement = `<div class = "new thing t${this.value}" 
+	 				style = "top: ${this.currentTop}px; left: ${this.currentLeft}px;"></div>`;
 	 		return appendElement;
 	}
 	//Запись DOM элемента в свойства

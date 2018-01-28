@@ -6,7 +6,6 @@ class Start {
     this.$playField = $('#playfield');
     this.$everyWhere = $('#playfield, html');
     this.$gamepad = $('#gamepad');
-    this.$gameOver = $('#gameover, #restart');
     //проверка на удержание кнопки мыши
     this.mouseDown = false; 
     //координаты мыши во время нажатия
@@ -19,6 +18,21 @@ class Start {
     this.restartGameListener();
     this.lastRecord();
     this.cursorCoordinates();
+  }
+  //Начало игры
+  startGameListener() {
+    const self = this;
+
+    $('#start').on('click', function(){
+
+      self.field = new Field(self.$playField, self.$gameOver);
+
+      const $menu = $('#menu');
+      $menu.fadeOut(600);
+
+      setTimeout(function() {
+      $menu.remove()}, 800);
+    });
   }
   //Координаты курсора при нажатии/отжатии кнопки
   cursorCoordinates() {
@@ -49,16 +63,16 @@ class Start {
         this.field.move('left');
 
       } else {
-        this.field.move('right');
-      } 
+          this.field.move('right');
+        } 
 
     } else if (this.sens <= Math.abs(dy)) {
       if (dy >= this.sens) {
         this.field.move('up');
 
       } else {
-        this.field.move('down');
-      }
+          this.field.move('down');
+        }
     }
 
     this.field.checkNewCell();
@@ -84,34 +98,18 @@ class Start {
     const lastRecord = localStorage.getItem('record') || 0;
     $("#record").html('Record: ' + lastRecord);
   }
-  //Начало игры
-  startGameListener() {
-    const self = this;
-
-    $('#start').on('click', function(){
-
-      self.field = new Field(self.$playField, self.$gameOver);
-
-      const $menu = $('#menu');
-      $menu.fadeOut(600);
-
-      setTimeout(function() {
-      $menu.remove()}, 800);
-    });
-  }
   //Начать заного
   restartGameListener() {
     const self = this;
 
     $('#restart').on('click', function(){
       self.field.reset();
-      self.$gameOver.fadeOut(600);
     })
   }
 }
 
 $(document).ready(function () {
 
-const start = new Start();	
+  const start = new Start();	
 
 });

@@ -122,10 +122,8 @@ html {
   background: #2f4230;
 }
 .thing {
-  -webkit-transition-property: top, left;
-  transition-property: top, left;
-  -webkit-transition-duration: 0.1s;
-          transition-duration: 0.1s;
+  -webkit-transition: background 1s, top 0.2s, left 0.2s;
+  transition: background 1s, top 0.2s, left 0.2s;
   position: absolute;
   width: 99px;
   height: 99px;
@@ -195,18 +193,21 @@ html {
   background: #078500;
 }
 .thing.t1024:after {
+  font-size: 40px;
   content: '1024';
 }
 .thing.t2048 {
   background: #850000;
 }
 .thing.t2048:after {
+  font-size: 40px;
   content: '2048';
 }
 .thing.t4096 {
   background: #faee02;
 }
 .thing.t4096:after {
+  font-size: 40px;
   content: '4096';
 }
 #gamepad {

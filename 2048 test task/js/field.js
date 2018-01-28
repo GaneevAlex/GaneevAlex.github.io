@@ -1,20 +1,23 @@
 "use strict";
 //Конструктор поля
 class Field {
-	constructor(playField, gameOver) {
-		this.$gameOver = gameOver;
+	constructor(playField) {
+    this.$gameOver = $('#gameover, #restart');
 		this.$playField = playField;
 		this.reset();
 	}
-	//Начальные параметры
+	//Обнуление параметров
 	reset() {
+   
+    this.$gameOver.fadeOut(600);
+
 		//Значения в поле
 		this.fillField = [];
 
-		for (let i = 0; i < 4; i++) {
-			this.fillField[i] = [];
-			for (let j = 0; j < 4; j++) {
-				this.fillField[i][j] = 0;
+		for (let row = 0; row < 4; row++) {
+			this.fillField[row] = [];
+			for (let col = 0; col < 4; col++) {
+				this.fillField[row][col] = 0;
 			}
 		}
 		//Удаление старых ячеек
@@ -41,16 +44,16 @@ class Field {
 	move(direct) {
 		switch(direct) {
 			case 'right': 
-				this.moveCells(this.lengthField, this.lengthField-1, true);
+				this.summValueCells(this.lengthField, this.lengthField-1, true);
 				break;
 			case 'left': 
-				this.moveCells(this.lengthField, 0, true);
+				this.summValueCells(this.lengthField, 0, true);
 				break;
 			case 'down': 
-				this.moveCells(this.lengthField, this.lengthField-1, false);
+				this.summValueCells(this.lengthField, this.lengthField-1, false);
 				break;
 			case 'up': 
-				this.moveCells(this.lengthField, 0, false);
+				this.summValueCells(this.lengthField, 0, false);
 				break;
 		}
 	}
@@ -60,31 +63,29 @@ class Field {
 	//horisont  left/right = true, up/down = false
 	moveCells(fieldLength, from, horisont) {
 
-		this.summValueCells(fieldLength, from, horisont);
-
 		let zeroCheck;
 		const inc = from == 0 ? 1 : -1;
 
-		for (let i = 0; i < fieldLength; i++) {
-			for (let j = from; j >= 0 && j < fieldLength; j += inc) {
+		for (let row = 0; row < fieldLength; row++) {
+			for (let col = from; col >= 0 && col < fieldLength; col += inc) {
 				//Проверка направления - вертикальное/горизонтальное
 				if (!horisont) {
-					zeroCheck = !this.notZero(j, i);
+					zeroCheck = !this.notZero(col, row);
 
 				} else {
-					zeroCheck = !this.notZero(i, j);
+					zeroCheck = !this.notZero(row, col);
 				}
 				//Если ноль
 				if (zeroCheck) { 
-					let k = j;
-					while ((k < fieldLength) && (k >= 0)) {
-						k += inc;
+					let tmp = col;
+					while ((tmp < fieldLength) && (tmp >= 0)) {
+						tmp += inc;
 						if (horisont) {
-							if ((this.moveToEmpty(i, j, i, k))) {
+							if ((this.moveToEmpty(row, col, row, tmp))) {
 							break;
 							};
 						} else {
-							if (this.moveToEmpty(j, i, k, i)) {
+							if (this.moveToEmpty(col, row, tmp, row)) {
 							break;
 							};
 						}
@@ -95,16 +96,16 @@ class Field {
 	}
 	//Для инверсии обхода столбец/строка,
 	//двигаем, если есть ячейка в строке/столбце
-	moveToEmpty(i, j, l, k) {
-		if (l < 0 || l > 3) {
+	moveToEmpty(row, col, tmpRow, tmpCol) {
+		if (tmpRow < 0 || tmpRow > this.lengthField-1) {
 			return false;
 		}
 
-		if (this.fillField[l][k] > 0) {
-			this.fillField[i][j] = this.fillField[l][k];
-			let numElement = this.findElement(l, k);
-			this.arrayElements[numElement].drowCell(i, j);
-			this.fillField[l][k] = 0;	
+		if (this.fillField[tmpRow][tmpCol] > 0) {
+			this.fillField[row][col] = this.fillField[tmpRow][tmpCol];
+			let numElement = this.findElement(tmpRow, tmpCol);
+			this.arrayElements[numElement].drowCell(row, col);
+			this.fillField[tmpRow][tmpCol] = 0;	
 			this.checkCreate = 1;
 			return true;
 		}
@@ -114,72 +115,76 @@ class Field {
 	//from right/down = fillField.length-1, left/up = 0;
 	//horisont  right/left = true, down/up = false
 	summValueCells(fieldLength, from, horisont) {
+
+		this.moveCells(fieldLength, from, horisont);
 		let zeroCheck;
 		const inc = from == 0 ? 1 : -1;
 
-		for (let i = 0; i < fieldLength; i++) {
-			for (let j = from; j >= 0 && j < fieldLength; j += inc) {
+		for (let row = 0; row < fieldLength; row++) {
+			for (let col = from; col >= 0 && col < fieldLength; col += inc) {
 				//Проверка направления - вертикальное/горизонтальное
 				if (!horisont) {
-					zeroCheck = this.notZero(j, i);
+					zeroCheck = this.notZero(col, row);
 
 				} else {
-					zeroCheck = this.notZero(i, j);
+					zeroCheck = this.notZero(row, col);
 				}
 
-				let k = j;
+				let tmp = col;
 				//для left/right
 				if (zeroCheck && horisont) { 
 					// ищем первую не нулевую клетку
-					while (k < fieldLength && k >= 0) {  
-						k += inc;
+					while (tmp < fieldLength && tmp >= 0) {  
+						tmp += inc;
 
-						if(this.notZero(i, k)) {
+						if(this.notZero(row, tmp)) {
 							break;
 						}
 					}
 
-					this.summIfEqual(i, j, i, k);
+					this.summIfEqual(row, col, row, tmp);
 					//для up/down
 				} else if (zeroCheck && !horisont) { 
 					// ищем первую не нулевую клетку
-					while (k < fieldLength && k >= 0) { 
-						k += inc;
+					while (tmp < fieldLength && tmp >= 0) { 
+						tmp += inc;
 
-						if(this.notZero(k, i)) {
+						if(this.notZero(tmp, row)) {
 							break;
 						}
 					}
 
-					this.summIfEqual(j, i, k, i)
+					this.summIfEqual(col, row, tmp, row)
 				}
 			}
 		}
+		this.moveCells(fieldLength, from, horisont);
+
 	}
 	//Для инверсии обхода столбец/строка,
 	//сложение, если значения ячеек равны
-	summIfEqual(i, j, l, k) {
-		if (l < 0 || l > 3) {
+	summIfEqual(row, col, tmpRow, tmpCol) {
+		if (tmpRow < 0 || tmpRow > this.lengthField-1) {
 			return true;
 		}
 
-		if (this.fillField[i][j] == this.fillField[l][k]) {
-			let numElement = this.findElement(i, j);
-			this.arrayElements[numElement].updateCell(this.fillField[i][j]);
-			this.deleteCell(l, k);
-			this.fillField[i][j] = this.fillField[i][j]*2;
-			this.fillField[l][k] = 0;
+		if (this.fillField[row][col] == this.fillField[tmpRow][tmpCol]) {
+			let numElement = this.findElement(row, col);
+			this.arrayElements[numElement].updateCell(this.fillField[row][col]);
+			this.deleteCell(tmpRow, tmpCol);
+			this.fillField[row][col] = this.fillField[row][col]*2;
+			this.fillField[tmpRow][tmpCol] = 0;
 			this.checkCreate = 1;
-			this.scoreCount(this.fillField[i][j]);
+			this.scoreCount(this.fillField[row][col]);
 			return true;
 		}
 	}
 	//проверка на равенство нулю
-	notZero(i, j) {
-		if (i < 0 || i > 3) {
+	notZero(row, col) {
+		if (row < 0 || row > this.lengthField-1) {
 			return true
 
-		} else if (this.fillField[i][j] == 0) {
+		} else if (this.fillField[row][col] == 0) {
 				return false;
 
 		} else {
@@ -188,9 +193,9 @@ class Field {
 	}
 	//Добавление новой ячейки
 	createCell() {
-		let randomI = this.randomInt(3);
-		let randomJ = this.randomInt(3);
-		let checkThis = this.checkCell(randomI, randomJ);
+		let randomRow = this.randomInt(3);
+		let randomCol = this.randomInt(3);
+		let checkThis = this.checkCell(randomRow, randomCol);
 
 		if (checkThis == 'create') {
 			let value;
@@ -203,12 +208,12 @@ class Field {
 					value = 2;
 			}
 
-			let newElement = new Cell(randomI, randomJ, value);
+			let newElement = new Cell(randomRow, randomCol, value);
 			this.arrayElements.push(newElement);
 			let appendCell = newElement.createElement();
 			this.$playField.append(appendCell);
 			newElement.setThisElement();
-			this.fillField[randomI][randomJ] = value;
+			this.fillField[randomRow][randomCol] = value;
 			newElement.element.fadeIn(600);
 			newElement.element.removeClass('new');
 
@@ -233,8 +238,8 @@ class Field {
 			}
 	}
 	//Проверка есть ли что-то в ячейке
-	checkCell(i, j) {
-		if (this.checkFill() && this.fillField[i][j] != 0) {
+	checkCell(row, col) {
+		if (this.checkFill() && this.fillField[row][col] != 0) {
 			return 'repeat';
 
 		} else {
@@ -252,9 +257,9 @@ class Field {
 			}
 	}
 	//Удаление ячейки
-	deleteCell(i, j) {
+	deleteCell(row, col) {
 		const self = this;
-		let numElement = this.findElement(i, j);
+		let numElement = this.findElement(row, col);
 		let rem = self.arrayElements.splice(numElement, 1);
 
 		rem[0].element.fadeOut(300);
@@ -262,13 +267,13 @@ class Field {
 		setTimeout(function() {
 			$(rem[0].element).remove();
 			return false;
-		}, 50);
+		}, 100);
 	}
 	//Поиск ячейки в массиве
-	findElement(n, m) {
-		for (let i = 0; i < this.arrayElements.length; i++) {
-			if (this.arrayElements[i].row == n && this.arrayElements[i].col == m) {
-				return i;
+	findElement(thisRow, thisCol) {
+		for (let index = 0; index < this.arrayElements.length; index++) {
+			if (this.arrayElements[index].row == thisRow && this.arrayElements[index].col == thisCol) {
+				return index;
 			}
 		} 
 	}
@@ -295,27 +300,27 @@ class Field {
 	//Проверка на возможность ходов
 	gameOver() {
 
-		for (let i = 0; i < this.lengthField; i++) {
-			for (let j = 0; j < this.lengthField; j++) {
+		for (let row = 0; row < this.lengthField; row++) {
+			for (let col = 0; col < this.lengthField; col++) {
 				//Для всех строк, кроме последней, проверяем равенство ячейки с правой и нижней
-				if (i < this.lengthField-1) {
-					if (j < this.lengthField-1) {
-						if ((this.fillField[i][j] == this.fillField[i][j+1])) {
+				if (row < this.lengthField-1) {
+					if (col < this.lengthField-1) {
+						if ((this.fillField[row][col] == this.fillField[row][col+1])) {
 							return true;
 
-						} else if (this.fillField[i][j] == this.fillField[i+1][j]) {
+						} else if (this.fillField[row][col] == this.fillField[row+1][col]) {
 								return true;
 						}
 
 					} else {
-							if (this.fillField[i][j] == this.fillField[i+1][j]) {
+							if (this.fillField[row][col] == this.fillField[row+1][col]) {
 								return true;
 							}
 						}
 					//Для последней строки, проверяем равенство ячейки с правой
-				} else if (i == this.lengthField-1) {
-						if (j < this.lengthField-1) {
-							if ((this.fillField[i][j] == this.fillField[i][j+1])) {
+				} else if (row == this.lengthField-1) {
+						if (col < this.lengthField-1) {
+							if ((this.fillField[row][col] == this.fillField[row][col+1])) {
 								return true;
 							}
 						}
@@ -327,6 +332,4 @@ class Field {
 		this.setRecord();
 		return false;
 	}
-
-
 }
