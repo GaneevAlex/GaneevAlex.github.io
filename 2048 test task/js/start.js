@@ -16,14 +16,15 @@ class Start {
     //Запуск отслеживания событий
     this.startGameListener();
     this.restartGameListener();
-    this.lastRecord();
+    Start.lastRecord();
     this.cursorCoordinates();
   }
   //Начало игры
   startGameListener() {
-    $('#start').on('click', () => {
+    const $start = $('#start');
+    $start.on('click', () => {
+      $start.hide();
       this.field = new Field(this.$playField);
-
       const $menu = $('#menu');
       $menu.fadeOut(600);
 
@@ -87,13 +88,15 @@ class Start {
     });
   }
   //Отображение последнего рекорда
-  lastRecord() {
+  static lastRecord() {
     const lastRecord = localStorage.getItem('record') || 0;
     $("#record").html('Record: ' + lastRecord);
   }
   //Начать заного
   restartGameListener() {
-    $('#restart').on('click', () => {
+    const $restart = $('#restart');
+    $restart.on('click', () => {
+      $restart.hide();
       this.field.resetView();
     })
   }
@@ -101,6 +104,6 @@ class Start {
 
 $(document).ready(function () {
 
-  const start = new Start();	
+  new Start();
 
 });

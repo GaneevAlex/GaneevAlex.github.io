@@ -7,21 +7,20 @@ class Cell {
 	}
 	//Установка значений положения ячейки для css left/top
 	get currentLeft() {
-		return parseInt((this.col*100)+1);
+		return parseInt((this.col * 100) + 1);
 	}
 	get	currentTop() {
-		return parseInt((this.row*100)+1);
+		return parseInt((this.row * 100) + 1);
 	}
 	//Создание новой ячейки
 	createElement() {
-	 		let appendElement = `<div class = "new thing t${this.value}" 
-	 				style = "top: ${this.currentTop}px; left: ${this.currentLeft}px;"></div>`;
-	 		return appendElement;
+		let appendElement = `<div class = "new thing t${this.value}" 
+				style = "top: ${this.currentTop}px; left: ${this.currentLeft}px;"></div>`;
+		return appendElement;
 	}
 	//Запись DOM элемента в свойства
 	setThisElement() {
-	 		let $newElement = $('.new');
-	 		this.element = $newElement;
+	 		this.element = $('.new');
 	 		return this.element;
 	}
 	//Обновление значения ячейки

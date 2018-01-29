@@ -77,7 +77,7 @@ class Field {
 	//Поиск ячейки в массиве
 	findElement(thisRow, thisCol) {
 		for (let index = 0; index < this.arrayElements.length; index++) {
-			if (this.arrayElements[index].row == thisRow && this.arrayElements[index].col == thisCol) {
+			if (this.arrayElements[index].row === thisRow && this.arrayElements[index].col === thisCol) {
 				return index;
 			}
 		} 
@@ -96,7 +96,7 @@ class Field {
 	}
 	//Подсчет/отображение очков
 	scoreCount(value) {
-		if (value == 0) {
+		if (value === 0) {
 			this.score = value;
 		}
 

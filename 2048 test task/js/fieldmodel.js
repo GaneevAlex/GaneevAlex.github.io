@@ -30,33 +30,30 @@ class FieldModel {
    * @return false если нет свободных клеток или не было никаких изменений на поле
    */
   createCell() {
-    let randomRow = this.randomInt(3);
-    let randomCol = this.randomInt(3);
+    let randomRow = FieldModel.randomInt(3);
+    let randomCol = FieldModel.randomInt(3);
     let checkThis = this.checkCell(randomRow, randomCol);
 
-    if (checkThis == 'create') {
+    if (checkThis === 'create') {
       let value;
-      let random = this.randomInt(10);
+      let random = FieldModel.randomInt(10);
 
       if (random > 9) {
         value = 4;
 
       } else {
           value = 2;
-      }
+        }
 
       this.fillField[randomRow][randomCol] = value;
       this.field.createCellView(randomRow, randomCol, value);
 
-    } else if (checkThis == 'repeat') {
+    } else if (checkThis === 'repeat') {
         this.createCell();
-
-    } else {
-        return false;
     }
   }
   //Случайное целое
-  randomInt(max) {
+  static randomInt(max) {
     return Math.floor(Math.random() * (max+1));
   }
   /**
@@ -80,8 +77,8 @@ class FieldModel {
           zeroCheck = this.notZero(col, row);
 
         } else {
-          zeroCheck = this.notZero(row, col);
-        }
+            zeroCheck = this.notZero(row, col);
+          }
 
         let tmp = col;
         //для left/right
@@ -120,11 +117,11 @@ class FieldModel {
       return true;
     }
 
-    if (this.fillField[row][col] == this.fillField[tmpRow][tmpCol]) {
+    if (this.fillField[row][col] === this.fillField[tmpRow][tmpCol]) {
       this.fillField[row][col] *= 2;
       this.fillField[tmpRow][tmpCol] = 0;
       this.checkCreate = 1;
-      this.field.summView(row, col, tmpRow, tmpCol)
+      this.field.summView(row, col, tmpRow, tmpCol);
       return true;
     }
   }
@@ -138,7 +135,7 @@ class FieldModel {
   moveCells(fieldLength, from, horisont) {
 
     let zeroCheck;
-    const inc = from == 0 ? 1 : -1;
+    const inc = from === 0 ? 1 : -1;
 
     for (let row = 0; row < fieldLength; row++) {
       for (let col = from; col >= 0 && col < fieldLength; col += inc) {
@@ -147,8 +144,8 @@ class FieldModel {
           zeroCheck = !this.notZero(col, row);
 
         } else {
-          zeroCheck = !this.notZero(row, col);
-        }
+            zeroCheck = !this.notZero(row, col);
+          }
         //Если ноль
         if (zeroCheck) { 
           let tmp = col;
@@ -157,11 +154,11 @@ class FieldModel {
             if (horisont) {
                 if ((this.moveToEmpty(row, col, row, tmp))) {
                   break;
-                };
+                }
             } else {
                 if (this.moveToEmpty(col, row, tmp, row)) {
                   break;
-                };
+                }
               }
           }
         }
@@ -185,18 +182,13 @@ class FieldModel {
   }
   //проверка на равенство нулю
   notZero(row, col) {
-    if (row < 0 || row > this.lengthField-1) {
+    if (row < 0 || row > this.lengthField - 1) {
       return true
-
-    } else if (this.fillField[row][col] == 0) {
-        return false;
-
-    } else {
-        return true;
-      }
+    }
+    return !(this.fillField[row][col] === 0);
   }
   //Проверка есть ли свободные клетки
-  checkFill(){ 
+  checkFill(){
     if (Math.pow(this.lengthField, 2) > this.field.arrayElements.length) {
       return true;
 
@@ -206,7 +198,7 @@ class FieldModel {
   }
   //Проверка есть ли что-то в клетке
   checkCell(row, col) {
-    if (this.checkFill() && this.fillField[row][col] != 0) {
+    if (this.checkFill() && this.fillField[row][col] !== 0) {
       return 'repeat';
 
     } else {
@@ -215,7 +207,7 @@ class FieldModel {
   }
   //Проверка на необходимость создания ячейки
   checkNewCell() {
-    if (this.checkCreate == 1) {
+    if (this.checkCreate === 1) {
       this.checkCreate = 0;
       this.createCell();
 
@@ -231,22 +223,22 @@ class FieldModel {
         //Для всех строк, кроме последней, проверяем равенство ячейки с правой и нижней
         if (row < this.lengthField-1) {
           if (col < this.lengthField-1) {
-            if ((this.fillField[row][col] == this.fillField[row][col+1])) {
+            if ((this.fillField[row][col] === this.fillField[row][col+1])) {
               return true;
 
-            } else if (this.fillField[row][col] == this.fillField[row+1][col]) {
+            } else if (this.fillField[row][col] === this.fillField[row+1][col]) {
                 return true;
               }
 
           } else {
-              if (this.fillField[row][col] == this.fillField[row+1][col]) {
+              if (this.fillField[row][col] === this.fillField[row+1][col]) {
                 return true;
               }
             }
           //Для последней строки, проверяем равенство ячейки с правой
-        } else if (row == this.lengthField-1) {
+        } else if (row === this.lengthField-1) {
             if (col < this.lengthField-1) {
-              if ((this.fillField[row][col] == this.fillField[row][col+1])) {
+              if ((this.fillField[row][col] === this.fillField[row][col+1])) {
                 return true;
               }
             }

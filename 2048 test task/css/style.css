@@ -12,22 +12,25 @@
   user-drag: none;
 }
 html {
-  background-color: #6c6960;
+  background-color: #006c2b;
 }
 #menu {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  top: 90px;
+  left: 90px;
   width: 402px;
   height: 402px;
   color: white;
   text-align: center;
   background-color: #0e472b;
   line-height: 20px;
-  border-radius: 30px;
+  border: 10px solid #001f00;
+  border-radius: 20px;
   opacity: 0.9;
 }
 .manual {
+  position: absolute;
+  top: 200px;
   font-size: 15px;
   font-family: sans-serif;
 }
@@ -66,8 +69,6 @@ html {
   left: 270px;
   top: 180px;
   z-index: 20;
-}
-#restart {
   display: none;
 }
 #gameover {
@@ -112,16 +113,14 @@ html {
   position: absolute;
   top: 100px;
   left: 100px;
-  width: 400px;
-  height: 400px;
-  background: white;
 }
 .back {
-  border: 1px solid black;
+  border: 1px solid #0f7400;
   position: absolute;
   width: 100px;
   height: 100px;
   background: #2f4230;
+  border-radius: 10px;
 }
 .thing,
 .menuThing {
@@ -139,75 +138,75 @@ html {
           box-shadow: inset 2px 2px 10px 4px;
 }
 .t2 {
-  background: #18df00;
+  background: #009600;
 }
 .t2:after {
   content: '2';
 }
 .t4 {
-  background: #5a9900;
+  background: #00963c;
 }
 .t4:after {
   content: '4';
 }
 .t8 {
-  background: #8c8e00;
+  background: #009678;
 }
 .t8:after {
   content: '8';
 }
 .t16 {
-  background: #d38200;
+  background: #0096b4;
 }
 .t16:after {
   content: '16';
 }
 .t32 {
-  background: #ae3900;
+  background: #004b7f;
 }
 .t32:after {
   content: '32';
 }
 .t64 {
-  background: #931269;
+  background: #282864;
 }
 .t64:after {
   content: '64';
 }
 .t128 {
-  background: #0a034c;
+  background: #3c0064;
 }
 .t128:after {
   content: '128';
 }
 .t256 {
-  background: #007785;
+  background: #780064;
 }
 .t256:after {
   content: '256';
 }
 .t512 {
-  background: #008547;
+  background: #b40064;
 }
 .t512:after {
   content: '512';
 }
 .t1024 {
-  background: #078500;
+  background: #f00064;
 }
 .t1024:after {
   font-size: 40px;
   content: '1024';
 }
 .t2048 {
-  background: #850000;
+  background: #9a0000;
 }
 .t2048:after {
   font-size: 40px;
   content: '2048';
 }
 .t4096 {
-  background: #faee02;
+  background: #af4207;
 }
 .t4096:after {
   font-size: 40px;
@@ -241,20 +240,20 @@ html {
   height: 25px;
   left: 100px;
   top: 67px;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0 20px 20px 0;
 }
 .way-up {
   width: 25px;
   height: 60px;
   left: 68px;
-  border-radius: 20px 20px 0 0px;
+  border-radius: 20px 20px 0 0;
 }
 .way-down {
   width: 25px;
   height: 60px;
   top: 100px;
   left: 68px;
-  border-radius: 0px 0 20px 20px;
+  border-radius: 0 0 20px 20px;
 }
 .new {
   display: none;
