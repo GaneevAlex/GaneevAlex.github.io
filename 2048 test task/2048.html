@@ -23,29 +23,13 @@
     </script>
 </head>
 <body>
-<div>
-    <h1 id="gameover">Game Over</h1>
-    <input type="button" id="restart" value="Restart">
+<div id = "gameover-wrap">
+    <h1 id="gameover">Game Over <br> <input type="button" id = "restart" class = "btn" value = "Restart"></h1>
 </div>
-<div id="score">Score: 0</div>
 <div id="record">Record: 0</div>
+<div id="score">Score: 0</div>
 <div id="playfield">
-    <div class="back" style="top: 0; left: 0;"></div>
-    <div class="back" style="top: 100px; left: 0;"></div>
-    <div class="back" style="top: 200px; left: 0;"></div>
-    <div class="back" style="top: 300px; left: 0;"></div>
-    <div class="back" style="top: 0; left: 100px;"></div>
-    <div class="back" style="top: 100px; left: 100px;"></div>
-    <div class="back" style="top: 200px; left: 100px;"></div>
-    <div class="back" style="top: 300px; left: 100px;"></div>
-    <div class="back" style="top: 0; left: 200px;"></div>
-    <div class="back" style="top: 100px; left: 200px;"></div>
-    <div class="back" style="top: 200px; left: 200px;"></div>
-    <div class="back" style="top: 300px; left: 200px;"></div>
-    <div class="back" style="top: 0; left: 300px;"></div>
-    <div class="back" style="top: 100px; left: 300px;"></div>
-    <div class="back" style="top: 200px; left: 300px;"></div>
-    <div class="back" style="top: 300px; left: 300px;"></div>
+
 </div>
 <div id="gamepad">
     <div class="way way-up"></div>
@@ -54,13 +38,16 @@
     <div class="way way-right"></div>
 </div>
 <div id="menu">
-    <input type="button" id="start" value="Start">
-    <div class = "menuThing t2048" style = "top:40px; left:150px;"></div>
-    <div class="manual">
+    <input type= "button" id = "start" class = "btn" value = "Start">
+    <div class = "menuThing t2048" style = "top: 40px; left: 150px;"></div>
+    <div class = "manual">
         <span>Для игры кликайте на поле и ведите мышь в необходимую сторону</span>
         <br>
         <span>For the game, click on the field and drag the mouse in the required direction</span>
-    </div>    
+    </div>
+    <div>
+        <input type="number" id="numbercells" placeholder = "Enter the number of cells horizontally" min = 2 max = 5>
+    </div>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
 <script type="text/javascript" src="js/field.js"></script>

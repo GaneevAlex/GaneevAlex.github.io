@@ -1,20 +1,22 @@
 "use strict";
 //Конструктор поля
 class Field {
-	constructor(playField) {
-    this.$gameOver = $('#gameover, #restart');
+	constructor(playField, numberCells) {
+    	this.$gameOverMenu = $('#gameover-wrap, #restart');
+    	this.$gameOver = $('#gameover-wrap');
 		this.$playField = playField;
+		this.drowFieldCells(numberCells);
 		this.resetView();
 		this.arrayElements = [];
-		this.fieldModel = new FieldModel(this);
+		this.fieldModel = new FieldModel(this, numberCells);
 	}
 	//Обнуление параметров
 	resetView() {
 		//Если рестарт игры
 		if (this.arrayElements) {
-				this.$gameOver.fadeOut(600);
-				
-				this.arrayElements = [];
+			this.$gameOver.fadeOut(600);
+
+            this.arrayElements = [];
 				
 				let $thing = $('.thing');
 
@@ -46,6 +48,13 @@ class Field {
 				break;
 		}
 		this.fieldModel.checkNewCell();
+	}
+	//Рисуем клетки поля
+	drowFieldCells(numCells) {
+		for (let number = 1; number <= Math.pow(numCells, 2); number++) {
+			this.$playField.append('<div class="back"></div>');
+			this.$playField.css("width", `${numCells*100}px`);
+		}
 	}
 	//Добавление новой ячейки
 	createCellView(row, col, value) {
@@ -114,6 +123,8 @@ class Field {
 		if (this.record < this.score) {
 			this.record = localStorage.setItem('record', this.score);
 		}
-		this.$gameOver.show(400);
+		this.$gameOverMenu.show(400);
+		this.$gameOverMenu.css('visibility', 'visible');
+		this.$gameOver.css('display', 'table');
 	}
 }

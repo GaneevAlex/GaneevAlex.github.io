@@ -21,16 +21,23 @@ class Start {
   }
   //Начало игры
   startGameListener() {
+    const $numCells = $('#numbercells');
     const $start = $('#start');
+    const $menu = $('#menu');
+
+    $numCells.keypress(() => {
+      return false;
+    });
+
     $start.on('click', () => {
       $start.hide();
-      this.field = new Field(this.$playField);
-      const $menu = $('#menu');
       $menu.fadeOut(600);
+      const numCells = $numCells.val() || 4;
 
-      setTimeout(function() {
+      setTimeout( () => {
+        this.field = new Field(this.$playField, numCells);
         $menu.remove()
-      }, 800);
+      }, 600);
     });
   }
   //Координаты курсора при нажатии/отжатии кнопки
@@ -96,7 +103,7 @@ class Start {
   restartGameListener() {
     const $restart = $('#restart');
     $restart.on('click', () => {
-      $restart.hide();
+      $restart.css('visibility', 'hidden');
       this.field.resetView();
     })
   }

@@ -1,8 +1,9 @@
 "use strict";
 //Конструктор поля
 class FieldModel {
-  constructor(field) {
+  constructor(field, numberCells) {
     this.field = field;
+    this.numberCells = numberCells;
     this.reset();
   }
   //Обнуление параметров
@@ -10,9 +11,9 @@ class FieldModel {
     //Значения в поле
     this.fillField = [];
 
-    for (let row = 0; row < 4; row++) {
+    for (let row = 0; row < this.numberCells; row++) {
       this.fillField[row] = [];
-      for (let col = 0; col < 4; col++) {
+      for (let col = 0; col < this.numberCells; col++) {
         this.fillField[row][col] = 0;
       }
     }
@@ -30,8 +31,8 @@ class FieldModel {
    * @return false если нет свободных клеток или не было никаких изменений на поле
    */
   createCell() {
-    let randomRow = FieldModel.randomInt(3);
-    let randomCol = FieldModel.randomInt(3);
+    let randomRow = FieldModel.randomInt(this.numberCells);
+    let randomCol = FieldModel.randomInt(this.numberCells);
     let checkThis = this.checkCell(randomRow, randomCol);
 
     if (checkThis === 'create') {
@@ -54,7 +55,7 @@ class FieldModel {
   }
   //Случайное целое
   static randomInt(max) {
-    return Math.floor(Math.random() * (max+1));
+    return Math.floor(Math.random() * max);
   }
   /**
    * Функция сложения
