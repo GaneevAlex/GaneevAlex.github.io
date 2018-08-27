@@ -1,0 +1,707 @@
+/*colors*/
+/*Fonts-family*/
+@font-face {
+  font-family: 'ProximaNova_reg';
+  src: url('../font/ProximaNova-Regular.eot');
+  src: url('../font/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), url('../font/ProximaNova-Regular.woff2') format('woff2'), url('../font/ProximaNova-Regular.woff') format('woff'), url('../font/ProximaNova-Regular.ttf') format('truetype'), url('../font/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova_bold';
+  src: url('../font/ProximaNova-Bold.eot');
+  src: url('../font/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), url('../font/ProximaNova-Bold.woff2') format('woff2'), url('../font/ProximaNova-Bold.woff') format('woff'), url('../font/ProximaNova-Bold.ttf') format('truetype'), url('../font/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+/*fonts*/
+/*basic settings*/
+html {
+  font-size: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: "ProximaNova_reg";
+}
+/*section*/
+section {
+  padding: 10rem 0;
+}
+button,
+input,
+a,
+textarea {
+  outline: none;
+}
+.button {
+  background-color: #feb404;
+  color: #ffffff;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #e8a301;
+}
+.button:active {
+  background-color: #cb8100;
+}
+.section-header {
+  margin: 0 0 13rem;
+  text-align: center;
+}
+.section-header h2 {
+  font-family: "ProximaNova_bold";
+  font-size: 3.6rem;
+}
+.section-header p {
+  margin-top: 5rem;
+  font-size: 1.8rem;
+}
+.section-header-active h2 {
+  color: #48bd15;
+}
+.section-header-light {
+  color: #ffffff;
+}
+/*form*/
+.form {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 3rem;
+}
+.form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+.form input {
+  display: block;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.form textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.form label {
+  font-size: 1.3rem;
+  position: absolute;
+  padding: 0.5rem;
+  background-color: #ffffff;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.form .button {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.form p {
+  font-size: 1.6rem;
+  margin: 0;
+}
+/*slider*/
+.slider-block {
+  text-align: center;
+  outline: none;
+}
+.slider-block h3 {
+  font-family: "ProximaNova_bold";
+  font-size: 2rem;
+  height: 4rem;
+  margin: 2rem 0;
+}
+.slider-block p {
+  display: inline-block;
+  font-size: 1.4rem;
+  width: 80%;
+}
+.slider-block img {
+  display: block;
+  margin: 0 auto;
+}
+.arrow {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  z-index: 100;
+  border: none;
+}
+.prev {
+  background: url(../img/arrow-left.svg) center no-repeat;
+  background-size: 70%;
+  left: 0;
+}
+.next {
+  background: url(../img/arrow-right.svg) center no-repeat;
+  background-size: 70%;
+  right: 0;
+}
+/*main*/
+main {
+  padding: 3rem 0 5rem;
+  background: #ffffff url("../img/header-background.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 3rem;
+}
+.telephone {
+  text-align: right;
+}
+.telephone a {
+  font-family: "ProximaNova_bold";
+  display: inline-block;
+  font-size: 2rem;
+  color: #1a1820;
+  height: 7rem;
+  line-height: 7rem;
+}
+.wrap {
+  display: table;
+  width: 100%;
+  height: 7rem;
+}
+.wrap-block {
+  font-size: 1.2rem;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+/*main-title*/
+.header-two {
+  margin-top: 10rem;
+  height: 41rem;
+}
+.main-title h1 {
+  font-family: "ProximaNova_bold";
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #1a1820;
+  line-height: 1.5;
+  margin: 0 0 4rem;
+}
+.main-title p {
+  font-size: 2.4rem;
+  color: #1a1820;
+  line-height: 1.1;
+  margin-bottom: 5rem;
+}
+.main-title span {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #ffffff;
+  background-color: #48bd15;
+  padding: 2.2rem 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.main-title span strong {
+  font-size: 2.2rem;
+}
+.main-title > strong {
+  font-family: "ProximaNova_bold";
+  display: block;
+  font-size: 2.6rem;
+  color: #1a1820;
+}
+.features-img {
+  height: 8rem;
+}
+/*Price*/
+.price {
+  text-align: center;
+  background: #286a0a url(../img/price-background.jpg) center;
+}
+.price-calculate {
+  padding: 2rem;
+  text-align: right;
+}
+.price-block {
+  background-color: #ffffff;
+  padding: 0rem 3rem;
+  -webkit-box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
+          box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
+  text-align: center;
+}
+.price-block h4 {
+  display: inline-block;
+  font-family: "ProximaNova_bold";
+  font-size: 1.8rem;
+  height: 5rem;
+  margin: 3rem 0 0;
+}
+.price-block p {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin: 3rem 0;
+}
+.price-block p span {
+  font-size: 3rem;
+  font-family: "ProximaNova_bold";
+}
+.price-block img {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin: auto;
+}
+.price-block ul {
+  padding: 0;
+  list-style: none;
+  min-height: 13rem;
+  line-height: 1.6;
+}
+.price-block ul li::before {
+  content: "";
+  display: inline-block;
+  background: url(../img/check.svg) center no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: 100%;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+.price-block button {
+  margin-bottom: 5rem;
+}
+/*feedback*/
+.feedback {
+  position: relative;
+  background: url(../img/feedback/feedback-background.jpg) center no-repeat;
+  background-size: cover;
+  padding-bottom: 5rem;
+}
+.feedback-slider {
+  background-color: #ffffff;
+  -webkit-box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+          box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+  padding: 5rem 6rem;
+}
+.feedback-slider .media {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+}
+.feedback-slider .media h4 {
+  font-family: "ProximaNova_bold";
+}
+.feedback-prev {
+  background: url(../img/feedback/arrow-prev.svg) center no-repeat;
+  background-size: 25%;
+  background-color: #48bd15;
+  width: 5rem;
+  height: 6rem;
+  left: -5rem;
+}
+.feedback-next {
+  background: url(../img/feedback/arrow-next.svg) center no-repeat;
+  background-size: 25%;
+  background-color: #48bd15;
+  width: 5rem;
+  height: 6rem;
+  right: -5rem;
+}
+.feedback p {
+  font-size: 1.6rem;
+}
+.feedback-text {
+  font-style: italic;
+  margin-top: 3rem;
+  padding: 2rem;
+  border: 2px solid #48bd15;
+  position: relative;
+}
+.feedback-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  border: 2px solid #48bd15;
+  border-top-right-radius: 2rem;
+  border-bottom: none;
+}
+.feedback-form {
+  text-align: center;
+  margin-top: 8rem;
+}
+.feedback-form h3 {
+  font-family: "ProximaNova_bold";
+  font-size: 2.2rem;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+.feedback-btn {
+  max-width: 30rem !important;
+  margin: auto;
+}
+.feedback-hand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 22%;
+}
+/*Схема работы*/
+.scheme {
+  padding-bottom: 0;
+  background: #ffffff url(../img/hand2.png) bottom -10rem right -15rem no-repeat;
+  background-size: 70rem;
+}
+.scheme-block {
+  min-height: 30rem;
+}
+.scheme-block h3 {
+  font-family: "ProximaNova_bold";
+  font-size: 2.2rem;
+}
+.scheme-block p {
+  font-size: 1.7rem;
+}
+/*Все на 100% включено*/
+.all-inclusive {
+  background-color: #f5f5f5;
+}
+.all-inclusive .media {
+  min-height: 15rem;
+  font-size: 1.3rem;
+}
+.all-inclusive .media h4 {
+  font-family: "ProximaNova_bold";
+  font-size: 1.6rem;
+}
+.circle {
+  display: inline-block;
+  background-color: #48bd15;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.circle-border {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #48bd15;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 4rem;
+  padding: 0.3rem;
+  color: #ffffff;
+  font-family: "ProximaNova_bold";
+  font-size: 1.9rem;
+}
+/*Мы развеем все опасения*/
+.problems {
+  position: relative;
+}
+.problems-list {
+  padding: 2rem;
+  min-height: 45rem;
+}
+.problems-list h4 {
+  font-family: "ProximaNova_bold";
+  font-size: 2.1rem;
+  margin-bottom: 4rem;
+}
+.problems-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+.problems-list li {
+  position: relative;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  padding-left: 3.5rem;
+}
+.problems-list li:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+  width: 3rem;
+  height: 3rem;
+  background-color: red;
+}
+.problems-list-bad {
+  border: 3px solid #dddddd;
+}
+.problems-list-bad h4 {
+  opacity: 0.5;
+}
+.problems-list-bad ul li:before {
+  background: url(../img/bad.png) center no-repeat;
+}
+.problems-list-good {
+  border: 3px solid #48bd15;
+}
+.problems-list-good ul li:before {
+  background: url(../img/good.png) center no-repeat;
+}
+.problems-women {
+  width: 29rem;
+  position: absolute;
+  bottom: 0;
+  left: 48%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/*Материалы*/
+.materials {
+  background: #ffffff url(../img/materials-bg.png) center no-repeat;
+  background-size: cover;
+}
+.materials img {
+  height: 18rem;
+}
+.materials-img h3 {
+  font-size: 2.2rem;
+}
+.materials-img p {
+  font-size: 1.9rem;
+  height: 5rem;
+  width: 100%;
+}
+.materials a {
+  color: #48bd15;
+  border-bottom: 1px dotted;
+}
+.materials a:hover {
+  color: #2e780d;
+  text-decoration: none;
+}
+.materials-footer {
+  text-align: center;
+  margin-top: 5rem;
+}
+/*Посмотрите как мы работаем*/
+.tour {
+  background: #ffffff url(../img/tour-bg.png) center no-repeat;
+  background-size: cover;
+}
+/*Дополнительные услуги*/
+.additions {
+  background: #286b0a;
+}
+.additions-block {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.additions-block img {
+  max-width: 30rem;
+}
+.additions-block p {
+  font-family: "ProximaNova_bold";
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 2rem auto;
+}
+.additions-block button {
+  font-family: "ProximaNova_bold";
+  min-width: 15rem;
+}
+/*Контакты*/
+.contacts {
+  background: #ffffff url(../img/contacts-bg.png) center no-repeat;
+  background-size: cover;
+}
+.contacts h5 {
+  font-size: 3.6rem;
+  font-family: "ProximaNova_bold";
+}
+.contacts p {
+  font-size: 1.8rem;
+  margin: 2rem auto;
+}
+.contacts a {
+  text-decoration: none;
+  color: #1a1820;
+}
+/*Footer*/
+footer {
+  margin: 2rem auto;
+}
+.footer-contact {
+  display: inline-block;
+  border-bottom: 1px dotted #dddddd;
+  text-align: center;
+}
+.footer-contact strong {
+  display: block;
+  margin: 0.3rem auto;
+}
+.footer-contact a {
+  color: #1a1820;
+  border-bottom: 1px dotted #dddddd;
+}
+.footer-contact a:hover {
+  text-decoration: none;
+}
+.footer-dev {
+  text-align: right;
+  margin: 0;
+}
+/*Modal windows*/
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  text-align: center;
+  padding: 5rem 0;
+}
+.popup-window {
+  display: inline-block;
+  position: fixed;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #ffffff;
+  width: 35rem;
+}
+.popup-content {
+  padding: 3rem 5rem;
+}
+.popup-content h4 {
+  font-family: "ProximaNova_bold";
+  font-size: 1.8rem;
+}
+.popup-content p {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+.popup-content textarea {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-color: #dddddd;
+  border-radius: 0.5rem;
+  resize: none;
+}
+.popup-close {
+  position: absolute;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  top: -2.5rem;
+  right: -3rem;
+  font-size: 5rem !important;
+}
+.popup-close:hover {
+  color: #cccccc;
+}
+@media (max-width: 991px) {
+  main {
+    background-position: top right;
+  }
+  .telephone {
+    text-align: center;
+  }
+  .main-title {
+    text-align: center;
+  }
+  .main-title > strong {
+    margin-bottom: 2rem;
+  }
+  .price-calculate {
+    text-align: center;
+  }
+  .price-block {
+    margin-top: 2rem;
+  }
+  .price-offer {
+    margin-bottom: 0;
+  }
+  .feedback-img {
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+  }
+  .problems-list {
+    margin-bottom: 2rem;
+    min-height: auto;
+  }
+  .problems-women {
+    display: none;
+  }
+  .tour {
+    background-position: top left;
+  }
+  footer {
+    text-align: center;
+  }
+  .footer-contact {
+    margin-top: 2rem;
+  }
+  .footer-dev {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  main {
+    background-position: top left;
+  }
+  .logo {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  .telephone {
+    text-align: left;
+  }
+  .telephone,
+  .wrap {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  .feedback-prev {
+    left: -1rem;
+  }
+  .feedback-next {
+    right: -1rem;
+  }
+  .feedback-img {
+    max-width: 100%;
+  }
+  .scheme {
+    text-align: center;
+    background: none;
+  }
+  .scheme-block {
+    min-height: 20rem;
+  }
+}
+@media (max-width: 539px) {
+  .main-title h1 {
+    font-family: "ProximaNova_bold";
+    font-size: 2rem;
+    margin: 0 0 2rem;
+  }
+  .telephone a {
+    font-size: 1.5rem;
+  }
+  .feedback-img {
+    margin-left: 1rem;
+  }
+  .tour button {
+    font-size: 1.3rem !important;
+  }
+}

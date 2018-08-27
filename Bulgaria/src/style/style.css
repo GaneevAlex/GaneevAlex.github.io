@@ -1,0 +1,1068 @@
+/*Спецификация*/
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Museo Sans Cyrl 300", sans-serif;
+    text-transform: uppercase;
+    overflow-x: hidden;
+}
+
+ul, li {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: "Museo Sans Cyrl 900";
+}
+
+* {
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.button__arrow {
+    position: absolute;
+    border: 1px dashed white;
+    border-radius: 50%;
+    padding: 0.8rem 1.1rem 1.0rem;
+    background: #213646;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button__arrow_top {
+    top: -1.5rem;
+}
+
+.button__arrow_bottom {
+    bottom: -1.5rem;
+}
+
+.button__arrow:hover {
+    background-color: white;
+    color: #213646;
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-family: "Museo Sans Cyrl 900";
+    color: white;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 2rem 4rem;
+    border-radius: 0.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    text-decoration: none;
+}
+
+.button:active {
+    transition: all 0s;
+    box-shadow: 0 0 20px rgba(7, 92, 170, 0.5) inset;
+    opacity: 0.7;
+}
+
+.button_wide {
+    display: block;
+    padding: 2rem 2rem;
+}
+
+/*Шапка*/
+.header {
+    background: #145c7f url("../images/header-bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+/*Шапка меню*/
+.header__menu {
+    background-color: rgba(32, 81, 104, 0.6);
+}
+
+.menu {
+    margin-top: 3.05rem;
+}
+
+.menu__item {
+    float: left;
+}
+
+.menu__item a {
+    text-decoration: none;
+    font-family: "Museo Sans Cyrl 900";
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 4px;
+    padding: 1.4rem;
+}
+
+.menu__item a:hover {
+    background-color: rgba(79, 132, 157, 0.5);
+}
+
+.phone {
+    position: relative;
+    top: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.phone-icon {
+    position: absolute;
+    right: 15rem;
+    top: 1rem;
+    padding: 1.1rem;
+    border: 1px dashed #23aae2;
+    border-radius: 50%;
+    color: #23aae2;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+.phone-icon:hover {
+    background-color: #23aae2;
+    color: white;
+}
+
+.phone-icon:active {
+    background-color: #1d719a;
+    transition: all 0s linear;
+}
+
+.phone p {
+    float: right;
+    font-family: "Museo Sans Cyrl 900";
+    color: white;
+    margin: 0;
+}
+
+.phone p:nth-child(2) {
+    margin-top: 0.5rem;
+}
+
+.header__menu .header__menu-icon {
+    font-size: 3.2rem;
+    color: white;
+    transition: all 0.01s;
+    cursor: pointer;
+}
+
+.header__menu .header__menu-icon:hover {
+    color: #bdbdbd;
+}
+
+.header__menu .header__menu-icon:active {
+    color: #4b4b4b;
+}
+
+/*Шапка первый экран*/
+.header__main {
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+}
+
+.header__main h1 {
+    font-size: 9rem;
+    letter-spacing: 4rem;
+    padding: 15rem 0 4rem;
+    margin: 0;
+}
+
+.header__main h2 {
+    font-size: 5.1rem;
+    letter-spacing: 1rem;
+    margin: 0;
+}
+
+.header__main i {
+    font-size: 3.2rem;
+    padding: 0.3rem 0.9rem;
+    border: 1px dashed white;
+    border-radius: 50%;
+    margin: 12rem 0 7rem;
+}
+
+.header__main i:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/*Наши преимущества*/
+.advantages {
+    padding: 8.5rem 0 10rem;
+}
+
+.advantages__header {
+    font-size: 4.2rem;
+    margin-bottom: 7rem;
+}
+
+.advantages__item {
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 6rem 0rem 3rem;
+    background: #f4f4f4;
+}
+
+.advantages__image {
+    height: 100px;
+}
+
+.advantages__image_safety {
+    background: url("../images/safety.png") center center no-repeat;
+}
+
+.advantages__image_reliability {
+    background: url("../images/reliability.png") center center no-repeat;
+}
+
+.advantages__image_competence {
+    background: url("../images/competence.png") center center no-repeat;
+}
+
+.advantages__title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.advantages__title:after {
+    content: "";
+    margin: 0.5rem auto 1rem;
+    display: block;
+    width: 3rem;
+    height: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.advantages__text {
+    font-size: 1.7rem;
+    height: 11rem;
+    text-transform: none;
+}
+
+/*Переезд в Болгарию*/
+.offer {
+    background: #30485c url("../images/offer-bg.jpg") center center no-repeat;
+    background-size: cover;
+    padding: 9rem 0;
+    color: white;
+}
+
+.offer__header {
+    font-size: 4.2rem;
+    letter-spacing: 0.6rem;
+}
+
+.quote {
+    padding: 3rem 0 5rem;
+}
+
+.quote p {
+    font-style: italic;
+    font-size: 1.8rem;
+    text-transform: none;
+}
+
+.quote span {
+    font-family: "Museo Sans Cyrl 900";
+    font-size: 1.4rem;
+}
+
+.offer__question {
+    border: 1px dashed white;
+    padding: 5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.offer__question p {
+    font-size: 1.9rem;
+}
+
+.offer__question span {
+    font-family: "Museo Sans Cyrl 900";
+    font-size: 2.3rem;
+}
+
+.offer__ans {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.offer__ans p {
+    font-family: "Museo Sans Cyrl 900";
+    font-size: 3.7rem;
+    margin: 0;
+}
+
+.offer__ans span {
+    font-size: 1.8rem;
+    text-transform: none;
+}
+
+/*Недвижимость и транспортные услуги*/
+.service {
+    background: url("../images/service-bg.png") center bottom no-repeat;
+    padding: 10rem 0;
+}
+
+.service__title {
+    font-size: 4.2rem;
+    margin-bottom: 15rem;
+}
+
+.dream {
+    margin-bottom: 10rem;
+}
+
+.dream p {
+    font-size: 1.7rem;
+    text-transform: none;
+}
+
+.house-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.house-image_one {
+    background: url("../images/house-image_one.png");
+    height: 135px;
+    width: 135px;
+    position: absolute;
+    top: -6.6rem;
+    z-index: -1;
+    margin: 0 -11rem;
+}
+
+.house-image_two {
+    background: url("../images/house-image_two.png");
+    height: 188px;
+    width: 188px;
+    position: absolute;
+    top: -12rem;
+}
+
+.house-image_three {
+    background: url("../images/house-image_three.png");
+    height: 120px;
+    width: 119px;
+    position: absolute;
+    top: -5rem;
+    z-index: -1;
+    margin: 0 7rem;
+}
+
+.dream__description, .dream__transportation {
+    background-color: #f4f4f4;
+    padding: 6rem 3rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.dream__description h3 {
+    font-size: 2rem;
+}
+
+.dream__transportation i {
+    position: absolute;
+    top: -3.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.6rem;
+    color: white;
+    border-radius: 50%;
+    padding: 1.7rem;
+    background-color: #23aae2;
+}
+
+.button_blue {
+    color: #23aae2;
+    border-color: #23aae2;
+}
+
+.button_blue:hover {
+    color: white;
+    background-color: rgba(35, 170, 226, 0.51);
+}
+
+/*Отзывы наших клиентов*/
+.comments {
+    padding: 9rem 0 17rem;
+}
+
+.comments__title {
+    font-size: 4.2rem;
+    margin-bottom: 7rem;
+}
+
+.comments__block {
+    position: relative;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 4rem 2rem 4rem 15rem;
+}
+
+.d-block {
+    padding: 1rem;
+}
+
+.comments__avatar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5rem;
+}
+
+.comments__header {
+    letter-spacing: 1px;
+}
+
+.comments__header .name {
+    float: left;
+    font-size: 1.6rem;
+}
+
+.comments__header .social-link {
+    float: left;
+    font-family: "Museo Sans Cyrl 900";
+    font-size: 1.2rem;
+    text-decoration: underline;
+    margin-left: 4rem;
+}
+
+.comments__header .trip {
+    font-size: 1.2rem;
+    color: #23aae2;
+    float: right;
+}
+
+.comments__text {
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: left;
+    text-transform: none;
+    padding-top: 2rem;
+}
+
+.carousel-control i {
+    font-size: 4.2rem;
+    color: #23aae2;
+}
+
+.comments__carousel-indicators {
+    position: absolute;
+    padding-left: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -7rem;
+    z-index: 15;
+    margin: 0;
+}
+
+.comments__carousel-indicators li {
+    border-radius: 50%;
+    border: 1px dashed #23aae2;
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.comments__carousel-indicators li.active {
+    background-color: #23aae2;
+}
+
+/* Есть вопросы по переезду в Болгарию? */
+.consultation {
+    background: #11b2f5 url("../images/consultation-bg.png");
+    color: white;
+    padding: 8rem 0;
+}
+
+.consultation__header {
+    margin-bottom: 7rem;
+}
+
+.consultation__header h2 {
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5rem;
+}
+
+.consultation__header p {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+.button__arrow_consultation {
+    background-color: #11b2f5;
+}
+
+.form input {
+    display: block;
+    font-size: 1.3rem;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    border: 1px solid white;
+    background-color: #30c1fe;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    color: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+.form input:focus::placeholder {
+    color: white;
+}
+
+.form input:focus {
+    color: white;
+    box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: #23aae2;
+    color: white;
+}
+
+.phone-icon_light {
+    color: white;
+    border-color: white;
+}
+
+.phone-icon_light:hover {
+    color: #23aae2;
+    background-color: white;
+}
+
+.rights {
+    float: left;
+    font-size: 1.3rem;
+    text-transform: none;
+    margin-top: 3rem;
+}
+
+.confidential {
+    float: right;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: none;
+    border-bottom: 1px dashed white;
+    margin-top: 2.9rem;
+    display: inline-block;
+}
+
+.confidential:hover {
+    text-decoration: none;
+    color: #145c7f;
+    border-color: #145c7f;
+}
+
+/* Страничка контакты */
+    /* Шапка первый экран */
+.header__main_slim h2 {
+    margin: 7rem 0 4rem;
+}
+
+.header__main_slim i {
+    margin: 0 0 16rem
+}
+
+    /* Контакты */
+.content-box {
+    position: relative;
+    top: -10rem;
+    background-color: white;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.content-box__text {
+    font-size: 1.7rem;
+    margin: 5rem 0 15rem;
+    text-transform: none;
+}
+
+.contacts__list li {
+    margin-bottom: 5rem;
+}
+
+.contacts__list h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.contacts__list p {
+    font-size: 1.6rem;
+    text-align: left;
+    text-transform: none;
+}
+
+.contacts__list img {
+    float: left;
+    margin: 0 2rem 0 -2rem;
+}
+
+.contacts__list .phone-numbers img {
+    margin: 1rem 3rem 4rem -0.8rem;
+}
+
+    /* Форма для консультации */
+.consultation__form {
+    background-color: #11b2f5;
+    border-radius: 0.5rem;
+    position: relative;
+    top: -10rem;
+    padding: 5rem;
+}
+
+.consultation__form .consultation__header {
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.consultation__form .consultation__header h2 {
+    font-size: 2.0rem;
+    letter-spacing: 0;
+}
+
+.consultation__form .consultation__header p {
+    font-size: 1.8rem;
+}
+
+ /* Недвижимость и переезд */
+.move .content-box {
+    padding-bottom: 10rem;
+}
+
+.move .content-box__text {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.move__content p {
+    text-transform: none;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+/* О компании */
+.about .content-box__text {
+    margin: 5rem 0;
+}
+
+.about__text-box {
+    float: left;
+    letter-spacing: 0.5rem;
+    margin-bottom: 5rem;
+}
+
+.about__text-box p {
+    margin: 0;
+}
+
+.about__text-box:nth-child(2) {
+    margin: 3rem;
+}
+
+.text_bold {
+    font-family: "Museo Sans Cyrl 900";
+}
+
+.text_big {
+    font-size: 3.9rem;
+}
+
+.text_mid {
+    font-size: 3rem;
+}
+
+.text_little {
+    font-size: 1.5rem;
+}
+
+.text_blue {
+    color: #23aae2;
+}
+
+.text_grey {
+    color: #bdbdbd;
+}
+
+.band_blue {
+    background-color: #23aae2;
+    font-size: 2.3rem;
+    color: white;
+    padding: 3rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 5rem;
+}
+
+.band_blue p {
+    margin: 0;
+}
+
+.partners p {
+    font-size: 2.9rem;
+    letter-spacing: 0.3rem;
+}
+
+.partners__box {
+    background-color: #f4f4f4;
+    box-shadow: 2px 2px 0.2rem rgba(0, 0, 0, 0.1);
+    height: 48rem;
+    margin: 5rem 0 10rem;
+    padding: 3rem;
+}
+
+.partners__box img {
+    margin-bottom: 3rem;
+}
+
+.partners__box h4 {
+    font-size: 2.1rem;
+}
+
+.partners__box span {
+    font-size: 1.6rem;
+    text-transform: none;
+    text-align: left;
+}
+
+/* Модальные окна */
+.consultation__modal .modal-title {
+    font-size: 3rem;
+    font-family: "Museo Sans Cyrl 900";
+}
+
+.consultation__modal .modal-body {
+    padding: 2rem 5rem 5rem;
+}
+
+.consultation__modal .button {
+    text-align: center;
+}
+
+@media screen and (max-width: 1199px){
+    .advantages__text {
+        font-size: 1.4rem;
+    }
+
+    .service__title {
+        font-size: 3.2rem;
+    }
+
+    .comments__block {
+        padding: 4rem 2rem 4rem 10rem;
+    }
+
+    /* О компании */
+    .partners__box {
+        height: 53rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header__logo {
+        padding: 0;
+    }
+
+    .menu__item a {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .col-md_nonPadding {
+        padding: 0;
+    }
+
+    .header__main h1 {
+        letter-spacing: 2rem;
+    }
+
+    .advantages__item {
+        margin-bottom: 2rem;
+    }
+
+    .comments__header .trip {
+        margin-right: 1rem;
+    }
+
+    .consultation__header h2 {
+        font-size: 3.2rem;
+    }
+
+    .rights {
+        float: none;
+        margin-top: 2rem;
+    }
+
+    .confidential {
+        float: none;
+        margin: 0;
+    }
+
+    /*Контакты*/
+    .header__main_slim i {
+        margin: 0 0 8rem;
+    }
+
+    .content-box {
+        top: 0;
+        box-shadow: none;
+    }
+
+    .consultation__form {
+        padding: 5rem 3rem;
+    }
+
+    .consultation__form .button_wide {
+        font-size: 1.3rem;
+    }
+
+    .consultation__form .consultation__header h2 {
+        letter-spacing: 0.6rem;
+    }
+
+    /* О компании */
+    .band_blue {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about__text-box:nth-child(2) {
+        margin: 3rem 1rem;
+    }
+
+    .partners__box {
+        height: 58rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__main h1 {
+        letter-spacing: 0rem;
+    }
+
+    .advantages__item {
+        padding: 2rem 0 0;
+    }
+
+    .comments__block {
+        padding: 4rem 5rem;
+    }
+
+    .comments__header .trip {
+        margin-right: 7.2rem;
+    }
+
+    .comments__avatar {
+        display: none;
+    }
+
+    .consultation__header h2 {
+        font-size: 2.2rem;
+    }
+
+    .consultation__header p {
+        font-size: 1.6rem;
+    }
+
+    /*Контакты*/
+    .content-box__text {
+        margin: 5rem 0;
+    }
+
+    .contacts__list img {
+        margin: 0 0 2rem;
+        float: none;
+    }
+
+    .contacts__list .phone-numbers img {
+        margin: 0 0 2rem;
+    }
+
+    .contacts__list h3, .contacts__list p {
+        text-align: center;
+    }
+
+    .consultation__form {
+        top: 0;
+        margin-bottom: 10rem;
+    }
+
+    /*Недвижимость и переезд*/
+    .header__move h2 {
+        font-size: 4.1rem;
+    }
+
+    .move__content {
+        text-align: center;
+    }
+    .move__content p {
+        text-align: center;
+        margin: 2rem 0 5rem;
+    }
+
+    .move .content-box {
+        padding-bottom: 5rem;
+    }
+
+    /* О компании */
+    .about__text-box {
+        float: none;
+    }
+
+    .partners__box {
+        height: 48rem;
+        margin: 5rem 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .comments__header .name {
+        float: none;
+    }
+
+    .comments__header .social-link {
+        float: none;
+        margin: 0;
+    }
+
+    .comments__header .trip {
+        float: none;
+        margin: 0;
+    }
+
+    .carousel-control {
+        display: none;
+    }
+
+    .comments__block {
+        padding: 4rem 1rem;
+    }
+
+    .rights {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 505px) {
+    .header__main h1 {
+        font-size: 7rem;
+    }
+
+    .header__main h2 {
+        font-size: 3.1rem;
+    }
+
+    .offer__header {
+        font-size: 3.2rem;
+    }
+
+    .quote p {
+        font-size: 1.2rem;
+    }
+
+    .offer__question p {
+        font-size: 1.4rem;
+    }
+
+    .offer__question span {
+        font-size: 1.2rem;
+    }
+
+    .house-image_one {
+        display: none;
+    }
+
+    .house-image_three {
+        display: none;
+    }
+
+    /* О компании */
+    .partners__box {
+        height: 53rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .phone i {
+        display: none;
+    }
+    .phone {
+        font-size: 1.2rem;
+    }
+
+    .header__main h1 {
+        font-size: 5rem;
+    }
+
+    .advantages__header {
+        font-size: 3.2rem;
+
+    }
+
+    .offer__ans p {
+        font-size: 2.7rem;
+    }
+
+    .service__title {
+        font-size: 3rem;
+    }
+
+    .dream p {
+        font-size: 1.2rem;
+    }
+
+    .comments__title {
+        font-size: 3.2rem;
+    }
+
+    /*Контакты*/
+    .consultation__form .consultation__header h2 {
+        font-size: 1.5rem;
+    }
+
+    .consultation__form .consultation__header p {
+        font-size: 1.2rem;
+    }
+
+    .consultation__form .button_wide {
+        font-size: 1rem;
+    }
+
+    /*Недвижимость и переезд*/
+    .header__move h2 {
+        font-size: 2.1rem;
+    }
+
+    /* О компании */
+    .partners__box {
+        height: 63rem;
+    }
+}
