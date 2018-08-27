@@ -9,6 +9,6 @@
 [Game 2048](https://ganeevalex.github.io/2048%20test%20task/2048.html) - for the movement of the cubes use the mouse;  
 [Axes-2](https://ganeevalex.github.io/axis/src/) - single digit addition;  
 [BookManager](https://ganeevalex.github.io/BookManager/) - Start learning php and MySQL. The link to the hosting :http://ganeevalex.000webhostapp.com/;
-[Plaster-Site](https://ganeevalex.github.io/plaster/src/) - Учебный проект, простой сайт
+[Plaster-Site](https://ganeevalex.github.io/plaster/src/) - Учебный проект, простой сайт;
 [Bulgaria-Site](https://ganeevalex.github.io/Bulgaria/src/) - Учебный проект, многостраничный сайт;
 
